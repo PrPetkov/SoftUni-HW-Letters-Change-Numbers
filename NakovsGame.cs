@@ -14,13 +14,14 @@ class NakovsGame
             char lastLetter = item[item.Length - 1];
             double num = int.Parse(item.Substring(1, item.Length - 2));
 
-            if (char.IsUpper(firstLetter))
+            if (!char.IsUpper(firstLetter))
             {
-                num /= (firstLetter - 64);
+                num *= (firstLetter - 96);
             }
             else
             {
-                num *= (firstLetter - 96);
+                
+                num /= (firstLetter - 64);
             }
 
             if (char.IsUpper(lastLetter))
